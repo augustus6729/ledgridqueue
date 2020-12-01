@@ -98,6 +98,10 @@ def test(action):
 		message = "Now Playing Random Sparkle"
 	if action == "cl":
 		cl(strip)
+	if action == "clear":
+		colorWipe(strip, Color(0,0,0), 10)
+	if action == "flag":
+		makeFlag(strip)
 	return render_template('test.html')
 if __name__ == '__main__':
 	# Process arguments
