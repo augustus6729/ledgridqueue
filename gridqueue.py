@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 # rpi_ws281x library strandtest example
 # Author: Tony DiCola (tony@tonydicola.com)
@@ -98,6 +98,14 @@ def test(action):
 		message = "Now Playing Random Sparkle"
 	if action == "cl":
 		cl(strip)
+	if action == "clear":
+		fillBoard(strip,Color(0,0,0))
+	if action == "flag":
+		makeFlag(strip)
+	if action == "message":
+		scrollMessage(strip,"welcome to the creativity lab",10,colorWhite,colorDarkBlue)
+	if action == "messageTyped":
+		makeFlag(strip)
 	return render_template('test.html')
 if __name__ == '__main__':
 	# Process arguments
