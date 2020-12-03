@@ -106,6 +106,13 @@ def test(action):
 		scrollMessage(strip,"welcome to the creativity lab",10,colorWhite,colorDarkBlue)
 	if action == "messageTyped":
 		makeFlag(strip)
+	if action == "marquee":
+		marqueeBorder(strip,20)
+	if action == "bouncy":
+		fillBoard(strip,Color(0,0,0))
+		bouncy(strip)
+	if action == "rainbow":
+		rainbow(strip)
 	return render_template('test.html')
 if __name__ == '__main__':
 	# Process arguments
