@@ -30,6 +30,7 @@ colorYellow = Color(255,0,255)
 colorOrange = Color(104,247,0)
 colorRed = Color(0,255,0)
 colorGreen = Color(255,0,0)
+colorPink = Color(255,0,153)
 
 sortColors = [ 
     Color(255,255,255),
