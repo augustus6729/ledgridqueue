@@ -9,14 +9,26 @@
 <button onclick="document.location='/cl'">CL</button>
 <button onclick="document.location='/clear'">Clear</button>
 <button onclick="document.location='/flag'">Make Flag</button>
-<button onclick="document.location='/message'">Welcome to the Creativity Lab</button>
+<button onclick="document.location='/welcome'">Welcome to the Creativity Lab</button>
 <button onclick="document.location='/marquee'">Marquee Border</button>
 <button onclick="document.location='/bouncy'">Bouncy</button>
 <button onclick="document.location='/rainbow'">Rainbow</button>
+<button onclick="document.location='/galton'">Galton Board</button>
+<button onclick="document.location='/randomNumberSort'">Random Number Sort</button>
+<button onclick="document.location='/cascade'">Cascade</button>
 <br>
 <br>
-<form method="POST" action="/messageTyped">
-  <label>Type your message here!</label><input type="text">
+<form method="POST" action="/message">
+  <p style="color: red">Warning: do not use capital letters or punctuation</p>
+  <label>Type your message here! </label><input type="text" name="message" id="message">
   <br>
   <input type="submit" value="Submit Message">
+</form>
+<br>
+<h3>Theather Chase Color Selection</h3>
+<form method="POST" action="/userWipe">
+  <label>Set red value from 0-255: </label><input type="text" name="r" id="r">
+  <label>Set green value from 0-255: </label><input type="text" name="g" id="g">
+  <label>Set blue value from 0-255: </label><input type="text" name="b" id="b">
+  <input type="submit" value="Submit Color">
 </form>

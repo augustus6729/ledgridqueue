@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 # rpi_ws281x library strandtest example
 # Author: Tony DiCola (tony@tonydicola.com)
@@ -95,17 +95,14 @@ def hello_world():
 def test(action):
 	if action == "randomSparkle":
 		randomSparkle(strip)
-		message = "Now Playing Random Sparkle"
 	if action == "cl":
 		cl(strip)
 	if action == "clear":
 		fillBoard(strip,Color(0,0,0))
 	if action == "flag":
 		makeFlag(strip)
-	if action == "message":
+	if action == "welcome":
 		scrollMessage(strip,"welcome to the creativity lab",10,colorWhite,colorDarkBlue)
-	if action == "messageTyped":
-		makeFlag(strip)
 	if action == "marquee":
 		marqueeBorder(strip,20)
 	if action == "bouncy":
@@ -113,6 +110,28 @@ def test(action):
 		bouncy(strip)
 	if action == "rainbow":
 		rainbow(strip)
+	if action == "galton":
+		galtonBoard(strip)
+	if action == "randomNumberSort":
+		randomNumberSort(strip)
+	if action == "cascade":
+		cascadeRecs(strip)
+	return render_template('test.html')
+@app.route('/message',methods = ['POST', 'GET'])
+def scroll():
+	if request.method == 'POST':
+		message = request.form['message']
+		sMessage = str(message)
+		scrollMessage(strip,sMessage,10,colorWhite,colorDarkBlue)
+	return render_template('test.html')
+@app.route('/userWipe',methods = ['POST','GET'])
+def userWipe():
+	if request.method == 'POST':
+		rValue = int(request.form['r'])
+		gValue = int(request.form['g'])
+		bValue = int(request.form['b'])
+		uColor = Color(rValue,gValue,bValue)
+		wipeLR(strip, uColor)
 	return render_template('test.html')
 if __name__ == '__main__':
 	# Process arguments
