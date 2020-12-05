@@ -2,9 +2,9 @@
 
 ## Students ##
 
-* Austin Tedders
-* Walker Gibbons
-* Michal Pacholczyk
+* Austin T.
+* Walker G.
+* Michal P.
 
 ## Purpose ##
 
