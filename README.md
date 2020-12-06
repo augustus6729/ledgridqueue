@@ -18,4 +18,6 @@ The purpose of this project is to create a web interface through which users can
 * YouTube
 * Gunicorn for HTTP Webserver
 
-
+## Starting the App ##
+1. cd into the project directory
+2. sudo gunicorn3 -b clgrid.cs.mercer.edu:80 ledgridqueue:app
